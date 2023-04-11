@@ -1,0 +1,7 @@
+.bsp
+.idea
+.metals
+.scala-build
+.vscode
+
+**/.scala-build
