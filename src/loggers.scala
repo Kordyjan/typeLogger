@@ -6,7 +6,7 @@ extension (inline t: Any)
   /**
     * Logs the computed type of the expression.
     *
-    * The computed type is the type of the expression as it is seen by the compiler and used to compute types of eclosing expressions. It is the same or narrower (more specific) than type that would be inferred for given expression.
+    * The computed type is the type of the expression as it is seen by the compiler and used to compute types of enclosing expressions. It is the same or narrower (more specific) than type that would be inferred for given expression.
     * The function can also log the widening of the computed type, or its simplified and dealiased form if, they are different than base form.
     *
     * The function has no footprint after the typer phase.

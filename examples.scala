@@ -17,7 +17,7 @@ def examples: Unit =
   // ... or use it as an extension method.
   List(1, 2, 3).logInferredType
 
-  // If you wnated to see the computed types before the inference you can use the `logComputedType` method instead.
+  // If you wanted to see the computed types before the inference you can use the `logComputedType` method instead.
   logComputedType:
     val x = 10
     val a = A(15)
@@ -46,7 +46,7 @@ object Types:
   trait Divergent
   case class A(value: Int) extends Divergent
   case class B(value: String) extends Divergent
-  case class C(valiue: Double) extends Divergent
+  case class C(value: Double) extends Divergent
 
   type Element[T] = T match
     case List[t] => t
