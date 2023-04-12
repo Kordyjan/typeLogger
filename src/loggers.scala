@@ -63,7 +63,7 @@ end findCallPart
 private def renderType(using Quotes)(tpe: quotes.reflect.TypeRepr): String =
   import quotes.reflect.*
   val rendered = tpe.show
-  val simplified = tpe.dealias.simplified.show
+  val simplified = tpe.simplified.dealias.simplified.show
   if (rendered == simplified) rendered else s"$rendered (=:= $simplified)"
 
 private def renderWidened(using Quotes)(tpe: quotes.reflect.TypeRepr): String =
