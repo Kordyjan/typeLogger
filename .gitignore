@@ -5,3 +5,5 @@
 .vscode
 
 **/.scala-build
+
+scala-doc

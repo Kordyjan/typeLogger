@@ -3,9 +3,28 @@ package typelogger
 import quoted.*
 
 extension (inline t: Any)
+  /**
+    * Logs the computed type of the expression.
+    *
+    * The computed type is the type of the expression as it is seen by the compiler and used to compute types of eclosing expressions. It is the same or narrower (more specific) than type that would be inferred for given expression.
+    * The function can also log the widening of the computed type, or its simplified and dealiased form if, they are different than base form.
+    *
+    * The function has no footprint after the typer phase.
+    *
+    * @return the expression itself
+    */
   transparent inline def logComputedType: Any = ${ logComputedTypeImpl('t) }
 
 extension [T](inline t: T)
+  /**
+    * Logs the inferred type of the expression.
+    *x
+    * By inferred type of the expression `t`, we understand the type that `T` is dealiased to if the expression `t` is passed to the function with signature `def f[T](t: T): Unit`. In rare cases, this can be different than the type inferred for a value defined as `val x = t`.
+    *
+    * This function doesn't bind the type of the expression to `T` and has no footprint after the typer phase.
+    *
+    * @return the expression itself
+    */
   transparent inline def logInferredType: T = ${ logInferredTypeImpl[T]('t) }
 
 private def logComputedTypeImpl(t: Expr[Any])(using Quotes): Expr[Any] =
